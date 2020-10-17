@@ -1,0 +1,14 @@
+jupyter serverextension enable --py nbgitpuller --sys-prefix
+jupyter serverextension enable voila --sys-prefix
+jupyter labextension install @jupyter-voila/jupyterlab-preview
+jupyter lab build --minimize=False
+
+echo '\n# git add commit and push in one command \n' >> .bashrc
+
+echo 'function cnp() {                                                                    ' >> .bashrc
+echo '    git add *                                                                       ' >> .bashrc
+echo '    git config --global user.name "beginnerSC"                                      ' >> .bashrc
+echo '    git config --global user.email "25188222+beginnerSC@users.noreply.github.com"   ' >> .bashrc
+echo '    git commit -a -m "update"                                                       ' >> .bashrc
+echo '    git push                                                                        ' >> .bashrc
+echo '}                                                                                   ' >> .bashrc
